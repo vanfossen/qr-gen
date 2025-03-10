@@ -1,11 +1,22 @@
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <>
+      <Navbar />
+
       <div className="flex grow flex-col items-center justify-center">
-        <span className="font-mono text-3xl font-bold underline">
-          Hello world!
-        </span>
+        <fieldset className="fieldset">
+          <legend className="fieldset-legend">QR Code Value</legend>
+          <textarea
+            className="textarea h-64 w-128"
+            placeholder="Type here"
+          ></textarea>
+        </fieldset>
       </div>
+
+      <Footer />
     </>
   );
 }
