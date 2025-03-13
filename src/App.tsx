@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import React, { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
+// components
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+
+// constants
 const TEXT_AREA_LENGTH = 512;
 
 function App() {
@@ -13,6 +16,10 @@ function App() {
     setValue(value);
   };
 
+  useEffect(() => {
+    setValue(window.location.pathname.slice(1));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -21,12 +28,12 @@ function App() {
         <fieldset className="fieldset">
           <legend className="fieldset-legend">QR Code Value</legend>
           <textarea
-            id="qr-value"
             className="textarea h-64 w-128"
             placeholder="Type here"
             maxLength={TEXT_AREA_LENGTH}
             value={value}
             onChange={handleValueChange}
+            aria-label="QR Code Value Input"
           ></textarea>
           <div className="fieldset-label">
             Characters left: {TEXT_AREA_LENGTH - value.length}
