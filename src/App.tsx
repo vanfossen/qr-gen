@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 const TEXT_AREA_LENGTH = 512;
 
 function App() {
+  const pathname = window.location.pathname.slice(1);
   const [value, setValue] = useState("");
 
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -17,8 +18,10 @@ function App() {
   };
 
   useEffect(() => {
-    setValue(window.location.pathname.slice(1));
-  }, []);
+    if (pathname) {
+      setValue(pathname);
+    }
+  }, [pathname]);
 
   return (
     <>
