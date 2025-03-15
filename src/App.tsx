@@ -31,7 +31,7 @@ function App() {
         <fieldset className="fieldset">
           <legend className="fieldset-legend text-2xl">QR Code Value</legend>
           <textarea
-            className="textarea textarea-lg h-64 w-128"
+            className="textarea textarea-lg h-64 w-72 md:h-64 md:w-128"
             placeholder="Type here"
             maxLength={TEXT_AREA_LENGTH}
             value={value}
@@ -45,7 +45,7 @@ function App() {
 
         {value && (
           <div className="m-4">
-            <QRCodeSVG value={value} marginSize={1} size={384} />
+            <QRCodeSVG value={value} marginSize={1} size={350} />
           </div>
         )}
       </div>
