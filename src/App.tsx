@@ -29,16 +29,16 @@ function App() {
 
       <div className="flex grow flex-col items-center justify-center">
         <fieldset className="fieldset">
-          <legend className="fieldset-legend">QR Code Value</legend>
+          <legend className="fieldset-legend text-2xl">QR Code Value</legend>
           <textarea
-            className="textarea h-64 w-128"
+            className="textarea textarea-lg h-64 w-128"
             placeholder="Type here"
             maxLength={TEXT_AREA_LENGTH}
             value={value}
             onChange={handleValueChange}
             aria-label="QR Code Value Input"
           ></textarea>
-          <div className="fieldset-label">
+          <div className="fieldset-label text-base">
             Characters left: {TEXT_AREA_LENGTH - value.length}
           </div>
         </fieldset>
