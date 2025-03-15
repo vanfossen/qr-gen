@@ -7,7 +7,7 @@ function Footer() {
           <a
             className="link link-hover"
             target="_blank"
-            href="https://www.example.com/"
+            href="https://github.com/vanfossen/qr-gen"
           >
             GitHub
           </a>
@@ -15,7 +15,7 @@ function Footer() {
           <a
             className="link link-hover"
             target="_blank"
-            href="https://www.example.com/"
+            href="https://github.com/vanfossen/qr-gen/blob/main/LICENSE"
           >
             MIT license
           </a>
