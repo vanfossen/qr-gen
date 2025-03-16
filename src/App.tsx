@@ -2,26 +2,28 @@ import React, { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
 // components
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Footer from "./components/Footer.tsx";
+import Navbar from "./components/Navbar.tsx";
 
 // constants
 const TEXT_AREA_LENGTH = 512;
+const BASE_PATH = "/qr-gen/";
 
 function App() {
-  const pathname = window.location.pathname.slice(1);
   const [value, setValue] = useState("");
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    if (pathname.startsWith(BASE_PATH)) {
+      const newValue = pathname.replace(BASE_PATH, "");
+      setValue(newValue);
+    }
+  }, []);
 
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = event.target.value;
     setValue(value);
   };
-
-  useEffect(() => {
-    if (pathname) {
-      setValue(pathname);
-    }
-  }, [pathname]);
 
   return (
     <>
